@@ -1255,8 +1255,8 @@ class Vehicle(HasObservers):
             self.notify_attribute_listeners('armed', self.armed, cache=True)
             self._autopilot_type = m.autopilot
             self._vehicle_type = m.type
-            if self._is_mode_available(m.custom_mode, m.base_mode) is False:
-                raise APIException("mode (%s, %s) not available on mavlink definition" % (m.custom_mode, m.base_mode))
+            # if self._is_mode_available(m.custom_mode, m.base_mode) is False:
+                # raise APIException("mode (%s, %s) not available on mavlink definition" % (m.custom_mode, m.base_mode))
             if self._autopilot_type == mavutil.mavlink.MAV_AUTOPILOT_PX4:
                 self._flightmode = mavutil.interpret_px4_mode(m.base_mode, m.custom_mode)
             else:
